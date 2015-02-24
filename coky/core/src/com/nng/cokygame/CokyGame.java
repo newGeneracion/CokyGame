@@ -13,7 +13,9 @@ public class CokyGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic1.jpg");
+		
+		img = new Texture("badlogic.jpg");
+		
 	}
 
 	@Override
