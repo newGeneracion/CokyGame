@@ -1,29 +1,60 @@
+/**
+ * help: http://www.pixnbgames.com/blog/libgdx/como-gestionar-varias-pantallas-en-libgdx/
+ * help: http://www.pixnbgames.com/blog/libgdx/como-hacer-una-pantalla-de-inicio-o-splash-screen-en-libgdx/
+ * @author user: JVillegas
+ */
+
 package com.nng.cokygame;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.utils.Timer;
+import com.nng.cokygame.controllers.Constants;
+import com.nng.cokygame.screens.ScreenSplash;
+import com.nng.cokygame.utils.ScreenEnum;
+import com.nng.cokygame.utils.ScreenManager;
 
-public class CokyGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
-	
-	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		
-		img = new Texture("badlogic.jpg");
-		
-	}
+public class CokyGame extends Game {
 
-	@Override
-	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
-	}
+	 public void create () {
+		 
+		 	ScreenManager.getInstance().initializate(this);
+		 	ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_SPLASH);
+	        // setScreen(new SplashScreen());
+	 
+	        final long splash_start_time = System.currentTimeMillis();
+	        new Thread(new Runnable() {
+	               @Override
+	               public void run() {
+	 
+	                   Gdx.app.postRunnable(new Runnable() {
+	                       public void run() {
+	                           // ... carga de datos
+	                           // ... carga de fuentes tipograficas
+	                           // ... carga de sonidos
+	                           // ... carga de imagenes
+	                           // ... carga de recursos de internacionalizacion
+	                           // ... otros
+	 
+	                           // Se muestra el menu principal tras la SpashScreen
+	                           long splash_elapsed_time = System.currentTimeMillis() - splash_start_time;
+	                           if (splash_elapsed_time < Constants.SPLASH_MINIUM_MILLIS) {
+	                               Timer.schedule(
+	                                       new Timer.Task() {
+	                                           @Override
+	                                           public void run() {
+	                                               ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
+	                                           }
+	                                       }, (float)(Constants.SPLASH_MINIUM_MILLIS - splash_elapsed_time) / 1000f);
+	                           } else {
+	                        	   ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
+	                           }
+	                       }
+	                   });
+	               }
+	            }).start();
+	    }
+	 
+
 }
