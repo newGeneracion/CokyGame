@@ -3,13 +3,10 @@ package com.nng.cokygame.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
@@ -17,8 +14,6 @@ import com.nng.cokygame.controllers.Constants;
 
 public class ScreenGame extends AbstractScreen {
 	
-	private SpriteBatch batch;
-	private Texture     img;
 	private World       world;
 	private Box2DDebugRenderer box2dRenderer;
 	private Vector2 gravity;
@@ -84,8 +79,7 @@ public class ScreenGame extends AbstractScreen {
 	}
 	
 	public void buildStage(){
-		this.batch = new SpriteBatch();
-		this.img   = new Texture("badlogic.jpg");
+
 	}
 	
 	public void render(float deltaTime) {
@@ -112,58 +106,3 @@ public class ScreenGame extends AbstractScreen {
 	
 }
 
-/*public class ScreenGame extends ScreenAdapter{
-	
-	private SpriteBatch batch;
-	private Texture     img;
-	private CokyGame    game;
-	
-	public ScreenGame(CokyGame game){
-		this.game = game;
-	}
-	
-	@Override
-	public void show() {
-		super.show();
-		this.init();
-	}
-	
-	private void init(){
-        this.batch = new SpriteBatch();
-		this.img   = new Texture("badlogic.jpg");
-	}
-
-	@Override
-	public void render(float deltaTime) {
-		super.render(deltaTime);
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		this.batch.begin();
-		this.batch.draw(this.img, 0, 0);
-		this.batch.end();
-	}
-
-	@Override
-	public void resize(int width, int height) {
-		super.resize(width, height);
-	}
-
-	@Override
-	public void pause() {
-		super.pause();		
-	}
-
-	@Override
-	public void resume() {
-		super.resume();		
-	}
-    
-	public void hide() {
-		super.hide();
-	}
-
-	public void dispose() {
-		super.dispose();
-	}
-
-}*/

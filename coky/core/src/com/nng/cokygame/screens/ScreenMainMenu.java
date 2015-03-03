@@ -16,7 +16,6 @@ public class ScreenMainMenu extends AbstractScreen{
 	
 	private void init() {
 		this.iconPlay = new Texture(Gdx.files.internal("img/ICON_PLAY.png"));
-		//this.btnPlay  = UIFactory
 	}
 	
 	@Override

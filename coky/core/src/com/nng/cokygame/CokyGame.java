@@ -8,10 +8,8 @@ package com.nng.cokygame;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Timer;
 import com.nng.cokygame.controllers.Constants;
-import com.nng.cokygame.screens.ScreenSplash;
 import com.nng.cokygame.utils.ScreenEnum;
 import com.nng.cokygame.utils.ScreenManager;
 
@@ -21,7 +19,6 @@ public class CokyGame extends Game {
 		 
 		 	ScreenManager.getInstance().initializate(this);
 		 	ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_SPLASH);
-	        // setScreen(new SplashScreen());
 	 
 	        final long splash_start_time = System.currentTimeMillis();
 	        new Thread(new Runnable() {
@@ -30,12 +27,7 @@ public class CokyGame extends Game {
 	 
 	                   Gdx.app.postRunnable(new Runnable() {
 	                       public void run() {
-	                           // ... carga de datos
-	                           // ... carga de fuentes tipograficas
-	                           // ... carga de sonidos
-	                           // ... carga de imagenes
-	                           // ... carga de recursos de internacionalizacion
-	                           // ... otros
+	                           // ... carga de datos, fuentes tipograficas, sonidos, imagenes, recursos de internacionalización
 	 
 	                           // Se muestra el menu principal tras la SpashScreen
 	                           long splash_elapsed_time = System.currentTimeMillis() - splash_start_time;

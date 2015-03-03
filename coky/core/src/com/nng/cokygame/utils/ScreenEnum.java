@@ -18,12 +18,6 @@ public enum ScreenEnum {
 			return new ScreenMainMenu();
 		}
 	}, 
-	
-	/*LEVEL_SELECT { 
-		public AbstractScreen getScreen(){
-			return new LevelSelectScreen();
-		}
-	},*/
 	SCREEN_GAME {
 		public AbstractScreen getScreen(){
 			return new ScreenGame();
