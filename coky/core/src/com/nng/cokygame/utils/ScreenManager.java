@@ -7,7 +7,7 @@ import com.nng.cokygame.screens.AbstractScreen;
 public class ScreenManager {
 	
 	private static ScreenManager instance;
-	private Game game;
+	private static Game game;
 	
 	
 	private ScreenManager() {
@@ -30,6 +30,10 @@ public class ScreenManager {
 		game.setScreen(newScreen);
 		if(currentScreen != null)
 			currentScreen.dispose();
+	}
+	
+	public static Game getGame(){
+		return game;
 	}
 
 }

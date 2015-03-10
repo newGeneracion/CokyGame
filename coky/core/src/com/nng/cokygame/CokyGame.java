@@ -19,7 +19,7 @@ public class CokyGame extends Game {
 		 
 		 	ScreenManager.getInstance().initializate(this);
 		 	ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_SPLASH);
-	 
+		 	
 	        final long splash_start_time = System.currentTimeMillis();
 	        new Thread(new Runnable() {
 	               @Override
