@@ -10,8 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.actions.AlphaAction;
 import com.badlogic.gdx.scenes.scene2d.actions.DelayAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.nng.cokygame.utils.ScreenEnum;
-import com.nng.cokygame.utils.ScreenManager;
+import com.nng.cokygame.enums.ScreenEnum;
+import com.nng.cokygame.enums.ScreenManager;
 
 public class ActorSplash extends Actor{
 	

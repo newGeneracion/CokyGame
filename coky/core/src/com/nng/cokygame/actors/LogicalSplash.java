@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.nng.cokygame.controllers.Constants;
 import com.nng.cokygame.screens.ScreenSplash;
+import com.nng.cokygame.utils.Constants;
 
 public class LogicalSplash extends Table{
 	

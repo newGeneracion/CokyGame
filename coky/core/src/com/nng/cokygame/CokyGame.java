@@ -9,9 +9,9 @@ package com.nng.cokygame;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Timer;
-import com.nng.cokygame.controllers.Constants;
-import com.nng.cokygame.utils.ScreenEnum;
-import com.nng.cokygame.utils.ScreenManager;
+import com.nng.cokygame.enums.ScreenEnum;
+import com.nng.cokygame.enums.ScreenManager;
+import com.nng.cokygame.utils.Constants;
 
 public class CokyGame extends Game {
 
