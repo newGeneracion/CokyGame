@@ -31,7 +31,7 @@ public class WorldUtils {
 		fixdef.shape = shape;
 		Body body = world.createBody(bodydef);
 		body.createFixture(fixdef);
-		body.setUserData(new GroundUserData());
+		body.setUserData(new GroundUserData(Constants.GROUND_WIDTH, Constants.GROUND_HEIGHT));
 		shape.dispose();
 		return body;
 	}

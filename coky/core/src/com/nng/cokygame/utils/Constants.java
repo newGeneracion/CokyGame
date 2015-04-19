@@ -20,6 +20,7 @@ public class Constants {
 	public static final float PPM       = 100;
 	public static final float WORLD_GRAVITY_X = 0.0f;
 	public static final float WORLD_GRAVITY_Y = -10f;
+	public static final float WORLD_TO_SCREEN = 32.0f;
 	
 	// category bits for bodys and/or fixtures
 	// NOTA MENTAL: no tomar como referencia  el 0, ya que no sirve
@@ -59,4 +60,13 @@ public class Constants {
 	public static final Vector2 PLAYER_JUMPING_LINEAR_IMPULSE = new Vector2(0, 13f);
 	public static final float PLAYER_HIT_ANGULAR_IMPULSE = 10f;
 	
+	// info for images
+	public static final String BACKGROUND_IMAGE_PATH_1 = "img/BACKGROUND_IMAGE_2.png";
+	public static final String BACKGROUND_IMAGE_PATH_2 = "";
+	public static final String BACKGORUND_IMAGE_PATH_3 = "";
+	
+	public static final String GROUND_IMAGE_PATH_1 = "img/GROUND_1.png";
+	public static final String GROUND_IMAGE_PATH_2 = "";
+	
+	public static final String PLAYER_IMAGE_PATH_1 = "img/PLAYER_1.png";
 }

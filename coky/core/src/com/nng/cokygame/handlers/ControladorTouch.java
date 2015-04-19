@@ -21,12 +21,13 @@ public class ControladorTouch extends InputAdapter {
 		super();
 		this.stageGame = stageGame;
 		touchPoint = new Vector3();
-		screenRightSide = new Rectangle(0, 0, this.stageGame.getCamera().viewportWidth / 2, this.stageGame.getCamera().viewportHeight);
+		screenRightSide = new Rectangle(this.stageGame.getCamera().viewportWidth / 2, 0, this.stageGame.getCamera().viewportWidth, this.stageGame.getCamera().viewportHeight);
 	}
 	
 	@Override
 	public boolean touchDown(int x, int y, int pointer, int button)
 	{
+		translateScreenToWorldCoordinates(x, y);
 		if (rightSideTouched(touchPoint.x, touchPoint.y)) stageGame.getPlayer().jump();
 		return super.touchDown(x, y, pointer, button);
 	}

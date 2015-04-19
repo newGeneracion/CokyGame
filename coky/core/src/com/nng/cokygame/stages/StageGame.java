@@ -5,6 +5,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.Scaling;
+import com.badlogic.gdx.utils.viewport.ScalingViewport;
+import com.nng.cokygame.actors.Background;
 import com.nng.cokygame.actors.Ground;
 import com.nng.cokygame.actors.Player;
 import com.nng.cokygame.handlers.ControladorTouch;
@@ -19,9 +22,11 @@ public class StageGame extends Stage{
 	 */
 	private float accumulator;
 	
-	private static final int VIEWPORT_WIDTH = 20;
-	private static final int VIEWPORT_HEIGHT = 13;
+	// private static final int VIEWPORT_WIDTH = 20;
+	// private static final int VIEWPORT_HEIGHT = 13;
 	
+	private static final int VIEWPORT_WIDTH  = (int)Constants.SCREEN_WIDTH;
+	private static final int VIEWPORT_HEIGHT = (int)Constants.SCREEN_HEIGHT;
 	/*
 	 * Mundo fisico, gravedar,  escuchador de contactos entre fixturas, render del mundo fisico
 	 */
@@ -41,7 +46,7 @@ public class StageGame extends Stage{
 		
 	public StageGame()
 	{
-		super();
+		super(new ScalingViewport(Scaling.stretch, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT)));
 		this.init();
 	}
 	
@@ -58,6 +63,7 @@ public class StageGame extends Stage{
 		world = WorldUtils.createWorld();
 		myContactListener = new MyContactListener(this);
 		world.setContactListener(myContactListener);
+		addActor(new Background());
 		ground = new Ground(WorldUtils.createGround(world));
 		addActor(ground);
 		player = new Player(WorldUtils.createPlayer(world));
