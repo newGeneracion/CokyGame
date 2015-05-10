@@ -7,7 +7,9 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.nng.cokygame.box2d.GroundUserData;
+import com.nng.cokygame.box2d.ObjectEnemyUserData;
 import com.nng.cokygame.box2d.PlayerUserData;
+import com.nng.cokygame.enums.ObjectEnemyType;
 
 public class WorldUtils {
 	
@@ -56,6 +58,24 @@ public class WorldUtils {
 		body.setUserData(new PlayerUserData(Constants.PLAYER_WIDTH, Constants.PLAYER_HEIGHT));
 		shape.dispose();
 		return body;
+	}
+	
+	public static Body createEnemyCactus(World world)
+	{
+		ObjectEnemyType objectEnemyType = RandomEnemyObjectUtils.getRandomObjectEnemyType();
+		BodyDef bodyDef = new BodyDef();
+		bodyDef.type = BodyDef.BodyType.KinematicBody;
+		bodyDef.position.set(new Vector2(objectEnemyType.getX(), objectEnemyType.getY()));
+		PolygonShape shape = new PolygonShape();
+		shape.setAsBox(objectEnemyType.getWidth() / 2, objectEnemyType.getHeight() / 2);
+		Body body = world.createBody(bodyDef);
+		body.createFixture(shape, objectEnemyType.getDensity());
+		body.resetMassData();
+		ObjectEnemyUserData objectEnemyUserData = new ObjectEnemyUserData(objectEnemyType.getWidth(), objectEnemyType.getHeight());
+		body.setUserData(objectEnemyUserData);
+		shape.dispose();
+		return body;
+		
 	}
 
 }

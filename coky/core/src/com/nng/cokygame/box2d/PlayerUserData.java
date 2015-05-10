@@ -39,4 +39,9 @@ public class PlayerUserData extends UserData
 		return runningPosition;
 	}
 	
+	public float getHitAngularImpulse()
+	{
+		return Constants.PLAYER_HIT_ANGULAR_IMPULSE;
+	}
+	
 }

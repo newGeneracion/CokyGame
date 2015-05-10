@@ -18,5 +18,24 @@ public class BodyUtils
 		UserData userData = (UserData) body.getUserData();
 		return userData.getUserDataType() == UserDataType.GROUND;
 	}
+	
+	public static boolean bodyInBounds(Body body)
+	{
+		UserData userData = (UserData) body.getUserData();
+		switch (userData.getUserDataType())
+		{
+			case PLAYER:
+			case OBJECT_ENEMY_CACTUS:
+				return body.getPosition().x + userData.getWidth() / 2 > 0;
+		}
+		
+		return true;
+	}
+	
+	public static boolean bodyIsObejctCactusEnemy(Body body)
+	{
+		UserData userData = (UserData) body.getUserData();
+		return userData != null && userData.getUserDataType() == UserDataType.OBJECT_ENEMY_CACTUS;
+	}
 
 }

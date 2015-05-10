@@ -69,4 +69,12 @@ public class Constants {
 	public static final String GROUND_IMAGE_PATH_2 = "";
 	
 	public static final String PLAYER_IMAGE_PATH_1 = "img/PLAYER_1.png";
+	
+	// info  for object enemys
+	// cactus
+	public static final float OBJECT_ENEMY_CACTUS_X = 25f;
+	public static final float OBJECT_ENEMY_CACTUS_SHORT_Y  = 1.5f;
+	public static final float OBJECT_CACTUS_DENSITY = PLAYER_DENSITY;
+	public static final Vector2 OBJECT_CACTUS_LINEAR_VELOCITY = new Vector2(-10f, 0);
+	public static final String OBJECT_CACTUS_IMAGE_PATH_1 = "img/IMAGE_OBJECT_CACTUS_1.png";
 }

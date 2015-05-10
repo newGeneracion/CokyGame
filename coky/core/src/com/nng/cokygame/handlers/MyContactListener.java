@@ -32,8 +32,14 @@ public class MyContactListener implements ContactListener {
 		
 		if (bodyA ==  null || bodyB == null) return;
 		
+		if ((BodyUtils.bodyIsPlayer(bodyA) && BodyUtils.bodyIsObejctCactusEnemy(bodyB)) ||
+		    (BodyUtils.bodyIsPlayer(bodyB) && BodyUtils.bodyIsObejctCactusEnemy(bodyA)))
+	    {
+		    stageGame.getPlayer().hit();
+	    }
 		if ((BodyUtils.bodyIsGround(bodyA) && BodyUtils.bodyIsPlayer(bodyB)) ||
-		    (BodyUtils.bodyIsGround(bodyB) && BodyUtils.bodyIsPlayer(bodyA))){
+		    (BodyUtils.bodyIsGround(bodyB) && BodyUtils.bodyIsPlayer(bodyA)))
+	    {
 			stageGame.getPlayer().landed();
 		}
 		

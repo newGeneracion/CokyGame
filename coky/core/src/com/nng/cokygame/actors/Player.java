@@ -13,6 +13,7 @@ public class Player extends ActorGame
 {
 	
 	private boolean jumping;
+	private boolean hit;
 	private TextureRegion textureRegion;
 	private float stateTime;
 	
@@ -30,7 +31,7 @@ public class Player extends ActorGame
 	
 	public void jump()
 	{
-		if(!jumping) {
+		if(!(jumping || hit)) {
 			body.applyLinearImpulse(getUserData().getJumpingLinearImpulse(), body.getWorldCenter(), true);
 			jumping = true;
 		}
@@ -39,6 +40,17 @@ public class Player extends ActorGame
 	public void landed()
 	{
 		jumping = false;
+	}
+	
+	public void hit()
+	{
+		body.applyAngularImpulse(getUserData().getHitAngularImpulse(), true);
+		hit = true;
+	}
+	
+	public boolean isHit()
+	{
+		return hit;
 	}
 	
 	@Override 
