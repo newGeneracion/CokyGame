@@ -27,9 +27,10 @@ public class BodyUtils
 			case PLAYER:
 			case OBJECT_ENEMY_CACTUS:
 				return body.getPosition().x + userData.getWidth() / 2 > 0;
+			default:
+				return true;
 		}
 		
-		return true;
 	}
 	
 	public static boolean bodyIsObejctCactusEnemy(Body body)

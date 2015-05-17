@@ -10,8 +10,6 @@ import com.nng.cokygame.utils.Constants;
 
 public class EnemyCactusActor extends ActorGame
 {
-
-	private float stateTime;
 	private TextureRegion textureRegion; 
 
 	public EnemyCactusActor(Body body)
@@ -37,5 +35,4 @@ public class EnemyCactusActor extends ActorGame
 		body.setLinearVelocity(getUserData().getLinearVelocity());
 	}
 	
-
 }

@@ -11,6 +11,7 @@ public abstract class ActorGame extends Actor
 	protected Body body;
 	protected UserData userData;
 	protected Rectangle screenRectangle;
+	protected float stateTime;
 	
 	public ActorGame()
 	{
@@ -46,6 +47,11 @@ public abstract class ActorGame extends Actor
 	protected float transformToScreen(float n)
 	{
 		return Constants.WORLD_TO_SCREEN * n;
+	}
+	
+	protected float getTime()
+	{
+		return stateTime;
 	}
 	
 	protected abstract UserData getUserData();

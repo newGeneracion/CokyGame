@@ -1,6 +1,7 @@
 /**
  * help: http://www.pixnbgames.com/blog/libgdx/como-gestionar-varias-pantallas-en-libgdx/
  * help: http://www.pixnbgames.com/blog/libgdx/como-hacer-una-pantalla-de-inicio-o-splash-screen-en-libgdx/
+ * help: http://marketplace.eclipse.org/content/json-editor-plugin
  * @author user: JVillegas
  */
 
@@ -36,7 +37,8 @@ public class CokyGame extends Game {
 	                                       new Timer.Task() {
 	                                           @Override
 	                                           public void run() {
-	                                               ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
+	                                               // ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
+	                                        	   ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_MAIN_MENU);
 	                                           }
 	                                       }, (float)(Constants.SPLASH_MINIUM_MILLIS - splash_elapsed_time) / 1000f);
 	                           } else {

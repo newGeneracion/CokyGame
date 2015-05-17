@@ -158,5 +158,10 @@ public class StageGame extends Stage{
 		return player;		
 	}
 	
+	public OrthographicCamera getCamera()
+	{
+		return camera;
+	}
+	
 	
 }

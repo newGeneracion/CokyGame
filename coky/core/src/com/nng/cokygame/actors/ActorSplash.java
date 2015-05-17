@@ -4,7 +4,6 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.AlphaAction;
 import com.badlogic.gdx.scenes.scene2d.actions.DelayAction;
@@ -20,7 +19,6 @@ public class ActorSplash extends Actor{
 	private DelayAction delay;
 	private SequenceAction sequence;
 	private Texture text;
-	private TextureRegion br;
 	private Image ImgBr;
 	
 	public ActorSplash(Game game){
@@ -62,6 +60,11 @@ public class ActorSplash extends Actor{
 			ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
 			this.remove();
 		}
+	}
+	
+	public Game getGame()
+	{
+		return game;
 	}
 
 }

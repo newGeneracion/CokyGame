@@ -15,7 +15,6 @@ public class Player extends ActorGame
 	private boolean jumping;
 	private boolean hit;
 	private TextureRegion textureRegion;
-	private float stateTime;
 	
 	public Player(Body body)
 	{

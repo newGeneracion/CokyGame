@@ -6,10 +6,10 @@ import com.badlogic.gdx.Screen;
 public class ScreenManager {
 	
 	private static ScreenManager instance;
-	private static Game game;
+	private Game game;
 	
 	
-	private ScreenManager() {
+	public ScreenManager() {
 		super();
 	}
 	
@@ -31,7 +31,7 @@ public class ScreenManager {
 			currentScreen.dispose();
 	}
 	
-	public static Game getGame(){
+	public Game getGame(){
 		return game;
 	}
 

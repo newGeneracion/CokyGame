@@ -13,7 +13,7 @@ public class RandomEnemyObjectUtils
 		return randomEnum.random();
 	}
 	
-	private static class RandomEnum<E extends Enum> 
+	private static class RandomEnum<E extends Enum<ObjectEnemyType>> 
 	{
 		private static final Random RND = new Random();
 		private final E[] values;

@@ -18,12 +18,14 @@ public class ScreenSplash extends AbstractScreen{
 	private SpriteBatch batch;
 	private Texture     ttrSplash;
 	private LogicalSplash ls;
+	private ScreenManager screenManager;
 	
 	public ScreenSplash() {
 		super();
 		this.batch = new SpriteBatch();
 		this.ttrSplash = new Texture(Gdx.files.internal("img/IMAGE_SPLASH.png"));
-		this.ls = new LogicalSplash(ScreenManager.getGame(), this);
+		this.screenManager = new ScreenManager();
+		this.ls = new LogicalSplash(screenManager.getGame(), this);
 		this.addActor(ls);
 	}
 	
