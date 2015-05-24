@@ -6,6 +6,7 @@ import com.nng.cokygame.screens.ScreenCredits;
 import com.nng.cokygame.screens.ScreenGame;
 import com.nng.cokygame.screens.ScreenMainMenu;
 import com.nng.cokygame.screens.ScreenSplash;
+import com.nng.cokygame.screens.ScreenStatistics;
 
 public enum ScreenEnum {
 	
@@ -23,7 +24,11 @@ public enum ScreenEnum {
 		public Screen getScreen(){
 			return new ScreenGame();
 		}
-		
+	},
+	SCREEN_STATISTICS {
+		public AbstractScreen getScreen(){
+			return new ScreenStatistics();
+		}
 	},
 	SCREEN_CREDITS {
 		public AbstractScreen getScreen(){

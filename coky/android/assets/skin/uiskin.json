@@ -1,5 +1,13 @@
 {
-com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: default.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: {
+	default-font: { file: default.fnt },
+	white64: { file: font/white64.fnt }, 
+	black64: { file: font/black64.fnt },
+	white32: { file: font/white32.fnt },
+	black32: { file: font/black32.fnt },
+	white16: { file: font/white16.fnt },
+	black16: { file: font/black16.fnt }
+},
 com.badlogic.gdx.graphics.Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },
 	white: { a: 1, b: 1, g: 1, r: 1 },
@@ -38,5 +46,5 @@ com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle: {
 },
 com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
 	default: { fontColorUnselected: white, selection: default-rect-pad, fontColorSelected: white, font: default-font }
-}
+},
 }

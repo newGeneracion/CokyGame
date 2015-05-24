@@ -36,6 +36,7 @@ public class MyContactListener implements ContactListener {
 		    (BodyUtils.bodyIsPlayer(bodyB) && BodyUtils.bodyIsObejctCactusEnemy(bodyA)))
 	    {
 		    stageGame.getPlayer().hit();
+		    stageGame.printGameOver();
 	    }
 		if ((BodyUtils.bodyIsGround(bodyA) && BodyUtils.bodyIsPlayer(bodyB)) ||
 		    (BodyUtils.bodyIsGround(bodyB) && BodyUtils.bodyIsPlayer(bodyA)))

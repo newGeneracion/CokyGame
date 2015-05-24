@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.nng.cokygame.utils.Constants;
 
@@ -17,12 +16,7 @@ public abstract class AbstractScreen extends Stage implements Screen{
 	// protected OrthographicCamera camera;
 	
 	protected Game game;
-	/***/
 	protected Skin skin;
-	protected static final int MENU_VIEWPORT_WIDTH = 800, MENU_VIEWPORT_HEIGHT = 480;
-	protected Stage stage;
-	protected Table table;
-	/**/
 	
 	protected AbstractScreen(){
 		//this.camera = new OrthographicCamera();
@@ -45,7 +39,7 @@ public abstract class AbstractScreen extends Stage implements Screen{
 	
 	public void render(float deltaTime){
 		
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+		Gdx.gl.glClearColor(0.2f, 0.2f, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         super.act(deltaTime);
         super.draw();
@@ -75,8 +69,7 @@ public abstract class AbstractScreen extends Stage implements Screen{
     
     public void dipose()
     {
-    	skin.dispose();
-    	stage.dispose();
+    	if (skin != null) skin.dispose();
     }
 
 }

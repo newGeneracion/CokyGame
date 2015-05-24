@@ -8,7 +8,6 @@ public class ScreenManager {
 	private static ScreenManager instance;
 	private Game game;
 	
-	
 	public ScreenManager() {
 		super();
 	}

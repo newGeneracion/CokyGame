@@ -11,6 +11,13 @@ public class Constants {
 	public final static float SCREEN_SCALE     = 2;
 	public final static float GAME_STEP        = 1/300f;
 	
+	// config for main menu
+	public static final int MENU_VIEWPORT_WIDTH  = 800;
+	public static final int MENU_VIEWPORT_HEIGHT = 480;
+	public static final float BUTTON_WIDTH = 400f;
+	public static final float BUTTON_HEIGHT = 60f;
+	public static final float BUTTON_SPACING = 10f;
+	
 	// config for android 
 	public static final boolean ANDROID_USE_COMPASS = false;
 	public static final boolean ANDROID_USER_ACCELEROMETER = false;

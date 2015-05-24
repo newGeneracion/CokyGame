@@ -2,6 +2,7 @@
  * help: http://www.pixnbgames.com/blog/libgdx/como-gestionar-varias-pantallas-en-libgdx/
  * help: http://www.pixnbgames.com/blog/libgdx/como-hacer-una-pantalla-de-inicio-o-splash-screen-en-libgdx/
  * help: http://marketplace.eclipse.org/content/json-editor-plugin
+ * help: https://code.google.com/p/steigert-libgdx/source/browse/trunk/tyrian-game/src/com/blogspot/steigert/tyrian/screens/MenuScreen.java
  * @author user: JVillegas
  */
 
@@ -19,6 +20,7 @@ public class CokyGame extends Game {
 	 public void create () {
 		 
 		 	ScreenManager.getInstance().initializate(this);
+		 	// ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_SPLASH);
 		 	ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_SPLASH);
 		 	
 	        final long splash_start_time = System.currentTimeMillis();
@@ -40,7 +42,7 @@ public class CokyGame extends Game {
 	                                               // ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
 	                                        	   ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_MAIN_MENU);
 	                                           }
-	                                       }, (float)(Constants.SPLASH_MINIUM_MILLIS - splash_elapsed_time) / 1000f);
+	                                       }, (float)(Constants.SPLASH_MINIUM_MILLIS - splash_elapsed_time) / 700f);
 	                           } else {
 	                        	   ScreenManager.getInstance().showScreen(ScreenEnum.SCREEN_GAME);
 	                           }
@@ -48,6 +50,7 @@ public class CokyGame extends Game {
 	                   });
 	               }
 	            }).start();
+	            
 	    }
 	 
 
